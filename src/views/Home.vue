@@ -10,9 +10,9 @@
           Make sure you check out our upcoming events below
         </h2>
         <div class="button-block">
-          <button v-if="!$auth.isAuthenticated" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
-          <h3 v-if="$auth.isAuthenticated" class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.name }}!</h3>
-        </div>
+  <button v-if="!$auth.isAuthenticated" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
+  <h3 v-if="$auth.isAuthenticated" class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.name }}!</h3>
+</div>
       </div>
     </div>
   </section>
@@ -24,15 +24,15 @@ import EventsList from '../components/EventsList';
 export default {
   name: 'home',
   components: {
-    EventsList
+    EventsList,
   },
   methods: {
     // Log the user in
     login() {
       this.$auth.loginWithRedirect();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
   .hero {    
